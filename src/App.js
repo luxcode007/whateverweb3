@@ -13,7 +13,7 @@ function App() {
 function Header() {
   return (
     <div className="header">
-      <h1>My Web App</h1>
+      <h1>Whatever, Web3</h1>
       <ScrollingStrip items={['Headline 1', 'Headline 2', 'Headline 3']} />
       <ScrollingStrip items={['Asset 1: $Price1', 'Asset 2: $Price2', 'Asset 3: $Price3']} />
     </div>
@@ -35,17 +35,30 @@ function ScrollingStrip({ items }) {
 function MainContent() {
   return (
     <div className="container">
-      <Sidebar items={['Asset A: $PriceA', 'Asset B: $PriceB']} />
+      <Sidebar1 items={['Asset A: $PriceA', 'Asset B: $PriceB']} />
       <Feed />
-      <Sidebar items={['Asset X: $PriceX', 'Asset Y: $PriceY']} />
+      <Sidebar2 items={['Asset X: $PriceX', 'Asset Y: $PriceY']} />
     </div>
   );
 }
 
-function Sidebar({ items }) {
+function Sidebar1 ({ items }) {
   return (
     <div className="sidebar">
-      <h3>Assets & Prices</h3>
+      <h3>CRYPTO</h3>
+      <ul>
+        {items.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function Sidebar2 ({ items }) {
+  return (
+    <div className="sidebar">
+      <h3>NFTs</h3>
       <ul>
         {items.map((item, index) => (
           <li key={index}>{item}</li>
@@ -61,7 +74,7 @@ function Feed() {
 
   return (
     <div className="feed">
-      <h2>Latest News</h2>
+      <h2>HEADLINE NEWS</h2>
       <ul>
         {newsItems.map((news, index) => (
           <li key={index}>{news}</li>
